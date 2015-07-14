@@ -1,3 +1,10 @@
+.fadeOut{
+    background-color: #dff0d8;
+}
+.fadeOut.end{
+    transition: all 1s ease-in-out;
+    background-color: transparent;
+}
 .table tbody tr > td.success {
     background-color: #dff0d8 !important;
 }

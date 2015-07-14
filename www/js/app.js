@@ -32,14 +32,14 @@ var Row = React.createClass({
         if (nextProps.row.LastUpdateTime != this.props.row.LastUpdateTime) {
 
             this.setState({
-                rowClass: "success"
+                rowClass: "fadeOut"
             });
-            setInterval(this.clearCssClass, 15000);
+            setInterval(this.clearCssClass, 3000);
         }
     },
     clearCssClass: function () {
         this.setState({
-            rowClass: ""
+            rowClass: 'fadeOut end'
         });
         clearInterval(this.clearCssClass);
     },

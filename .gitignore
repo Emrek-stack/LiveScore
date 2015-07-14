@@ -73,3 +73,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+.idea/jsLibraryMappings.xml
+.idea/libraries/LiveScore_node_modules.xml
+.idea/modules.xml
+.idea/workspace.xml

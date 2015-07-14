@@ -6,15 +6,9 @@ var request = require('request'),
 function loadJSONFile(filename) {
     try {
         var encoding = 'utf8';
-
-        // read file synchroneously
         var contents = fs.readFileSync(filename, encoding);
-
-        // parse contents as JSON
         return JSON.parse(contents);
-
     } catch (err) {
-        // an error occurred
         throw err;
         console.log(err)
     }
@@ -25,7 +19,6 @@ function createFile() {
     request(config.LiveDataUrl, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             var currentData = loadJSONFile(config.DataFileName);
-
             if (JSON.stringify(currentData) != body) {
                 fs.writeFile(config.DataFileName, body, function (err) {
                     if (err) {
@@ -36,7 +29,6 @@ function createFile() {
                 });
             }
             else {
-
                 console.log('%s has no changes', config.DataFileName);
             }
         }
@@ -44,8 +36,6 @@ function createFile() {
 
 };
 
-
 setInterval(createFile, config.FetchDataInterval);
-
 
 exports.createFile = createFile;

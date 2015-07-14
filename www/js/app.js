@@ -10,12 +10,9 @@ var HomePage = React.createClass({
     },
     render: function () {
         var rows = [];
-
-
         for (var i = 0; i < this.state.goals.length; i++) {
             rows.push(<Row row={this.state.goals[i]} key={this.state.goals[i].EventId}/>);
         }
-
         return (
             <table className="table table-hover">
                 <tbody>
